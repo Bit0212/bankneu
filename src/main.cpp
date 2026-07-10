@@ -6,6 +6,7 @@
 #include <atomic>
 #include <raylib.h>  
 #include "entities.hpp"
+#include "game.hpp"
 
 
 

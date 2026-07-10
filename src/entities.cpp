@@ -10,20 +10,45 @@ std::uniform_int_distribution agi(13,50);
 std::uniform_int_distribution cash(1450,15000);
 std::uniform_int_distribution rndevents(0,3);
 std::uniform_real_distribution rnpos(1.0f,static_cast<float>(promwh));
-
+std::uniform_int_distribution randomexec(0,3);
+std::uniform_real_distribution spdval(1.0f, 700f);
 void person::evoke(){
-this->pos = {rnpos(gen),rnpos(gen)};
+    float posx = rnpos(gen);
+    float posy = rnpos(gen);
+this->pos = {posx,posy};
+this->dvpos = {(pos.x+promwh)/2, (pos.y+promwh)/2)};
 };
 void person::updatepos(){
+float frame = GetFrameTime();
+   int konstant = randomexec(gen());
+potentialmovements potencielle = static_cast<potentialmovements>(k);
+switch(potencielle){
+    case potentialmovements::Up:
+        this->pos.y +=this->speed*frame;
+        break;
+    case potentialmovements::Down:
+        this->pos.y -= this->speed*frame;
+        break;
+    case potentialmovements::Left:
+        this->pos.x += this->speed*frame;
+        break;
+    case::potentialmovements::Right:
+        this->pos.x +=this->speed*frame;
+        break;
+
+        
+
+}
 
 
-};
+
+}
 
 
 person::person(){
         std::cout<<"i've been born today\n";
 
-
+this->speed =spdval(gen); 
 this->name =potentialnames[dif(gen)];
 this->age =agi(gen); 
 this->actualcash =cash(gen); 

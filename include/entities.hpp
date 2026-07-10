@@ -19,6 +19,8 @@ class person : public entity{
     double actualcash;
     int depressivestate;
     Vector2 pos;
+    Vector2 dvpos;
+    float speed;
 void randevents();
 void evoke() override final;
 void updatepos() override final;
@@ -33,6 +35,12 @@ DepressionWon,
 
 
 
+    };
+    enum class potentialmovemens : int{
+    Up,
+    Down,
+    Right,
+    Left
     };
     // why atomic?: race conditions (just in case)
    inline static std::atomic<int>simcount =0;
