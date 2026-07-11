@@ -16,6 +16,6 @@ target_include_directories(people
 )
 
 target_link_libraries( people
-    ${RAYLIB_INCLUDE_DIRS}
+    ${RAYLIB_LIBRARIES}
 
 )
