@@ -29,7 +29,9 @@ p.emplace_back();
 
 
 */
-
+int* k = new int(20);
+delete k;
+delete k;
 Game game(f);
 return 0;
 

@@ -5,14 +5,14 @@
 #include "game.hpp"
 std::random_device bd;
 std::mt19937 gen(bd());
-std::uniform_int_distribution dif(0,5);
+std::uniform_int_distribution dif(0,9);
 std::uniform_int_distribution agi(13,50);
 std::uniform_int_distribution cash(1450,15000);
 std::uniform_int_distribution rndevents(0,3);
 std::uniform_real_distribution<> rnpos(1.0f,static_cast<float>(promwh));
 std::uniform_int_distribution randomexec(0,3);
 std::uniform_real_distribution<> spdval(1.0f, 10.0f);
-std::uniform_int_distribution randiumovich(1,50);
+std::uniform_int_distribution randiumovich(1,5);
 void person::evoke(){
     float posx = rnpos(gen);
     float posy = rnpos(gen);
@@ -30,10 +30,10 @@ float frame = GetFrameTime();
 potentialmovements potencielle = static_cast<potentialmovements>(konstant);
 switch(potencielle){
     case potentialmovements::Up:
-        this->pos.y +=this->speed*frame;
+        this->pos.y -=this->speed*frame;
         break;
     case potentialmovements::Down:
-        this->pos.y -= this->speed*frame;
+        this->pos.y += this->speed*frame;
         break;
     case potentialmovements::Left:
         this->pos.x += this->speed*frame;
@@ -113,4 +113,11 @@ simcount++;
 std::cout<<"this is the event number: "<<simcount<<"keep going\n"; 
 
 }
+ void person::alivechecker(){
 
+if(this->age>500 || this->actualcash <0 ||this->depressivestate>100 ){
+   this->IsAlive =false; 
+}
+
+
+}

@@ -19,3 +19,9 @@ target_link_libraries( people
     ${RAYLIB_LIBRARIES}
 
 )
+#debug only
+#target_compile_options(people PRIVATE
+#    -save-temps
+#    -masm=intel
+#    -fverbose-asm
+#)

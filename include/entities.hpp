@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef ENTITIES_HPP
+#define ENTITIES_HPP 
+#include <iostream> 
 #include <atomic>
 #include <array>
 #include <string>
@@ -7,13 +9,15 @@ class entity{
     public:
 virtual void evoke() =0;
 virtual void updatepos()=0;
+virtual void draw() =0;
 
 };
 
 
 class person : public entity{
     public:
-    std::array<std::string,6> potentialnames{"jose","pedro", "constantino", "manuel", "pedro", "energumeno"};
+        bool IsAlive{true};
+    std::array<std::string,10> potentialnames{"jose","pedro", "constantino", "manuel", "pedro", "energumeno", "patroclo", "ulises", "al-iksindr", "o-megas"};
     std::string name;
     int radium;
     int age;
@@ -24,10 +28,10 @@ class person : public entity{
     float speed;
 void drawname();
 void randevents();
-void draw();
+void draw() override final;
 void evoke() override final;
 void updatepos() override final;
-
+void alivechecker();
 
     private:
     enum class potentialstates :int {
@@ -52,4 +56,4 @@ DepressionWon,
      person();
 ~person();
 };
-
+#endif
