@@ -5,14 +5,14 @@
 #include "game.hpp"
 std::random_device bd;
 std::mt19937 gen(bd());
-std::uniform_int_distribution dif(0,9);
-std::uniform_int_distribution agi(13,50);
-std::uniform_int_distribution cash(1450,15000);
-std::uniform_int_distribution rndevents(0,3);
-std::uniform_real_distribution<> rnpos(1.0f,static_cast<float>(promwh));
-std::uniform_int_distribution randomexec(0,3);
-std::uniform_real_distribution<> spdval(1.0f, 10.0f);
-std::uniform_int_distribution randiumovich(1,5);
+std::uniform_int_distribution dif(0,9);//possible names
+std::uniform_int_distribution agi(13,50);//possible ages
+std::uniform_int_distribution cash(1450,15000);//possible starter cash
+std::uniform_int_distribution rndevents(0,3);//possible events
+std::uniform_real_distribution<> rnpos(1.0f,static_cast<float>(promwh));//possible positions
+std::uniform_int_distribution randomexec(0,3);//possible movements
+std::uniform_real_distribution<> spdval(1.0f, 10.0f);//possible speed dv
+std::uniform_int_distribution randiumovich(1,50);//possible size of radius of the generated circle
 void person::evoke(){
     float posx = rnpos(gen);
     float posy = rnpos(gen);

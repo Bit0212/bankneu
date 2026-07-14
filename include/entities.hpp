@@ -5,7 +5,7 @@
 #include <array>
 #include <string>
 #include <raylib.h>
-class entity{
+class entity{ // in case of creating more entity types(classes)
     public:
 virtual void evoke() =0;
 virtual void updatepos()=0;

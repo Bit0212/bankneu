@@ -2,8 +2,6 @@
 #include <string>
 #include <vector>
 #include<raylib.h>
-#include<chrono>
-#include <thread>
 #include "game.hpp"
 #include "entities.hpp"
 

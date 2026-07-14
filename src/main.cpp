@@ -19,19 +19,7 @@ if(f<0){
     std::cerr<<"don't put negative numbers in this simulation\n";
     return 1;
 }
-/*   std::vector<person> p{};
-std::size_t k =static_cast<std::size_t> (f);
-for (std::size_t i =0; i<k; i++){//creation of people
-p.emplace_back();
-    
-}
 
-
-
-*/
-int* k = new int(20);
-delete k;
-delete k;
 Game game(f);
 return 0;
 

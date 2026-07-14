@@ -3,9 +3,7 @@
 #include <raylib.h>
 #include <string>
 #include <thread>
-//for bit from the future:
-//use standard desviation (this template is intended for this)
-//then generate the value in dv
+
 template< typename T, typename ... Arguments  >
 constexpr T promedium( Arguments ... argos){
     T numerator =0;
